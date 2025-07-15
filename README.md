@@ -215,11 +215,11 @@ reward = throughput_reward - queue_penalty - wait_penalty - phase_change_cost + 
 # Training Configuration (train_dqn.py)
 model = DQN(
     policy="MlpPolicy",
-    learning_rate=0.0005,    # Adjust learning speed
-    buffer_size=100000,      # Memory capacity
-    batch_size=256,          # Training batch size
-    gamma=0.98,              # Future reward discount
-    exploration_fraction=0.3, # Exploration duration
+    learning_rate=0.0005,        # Adjust learning speed
+    buffer_size=100000,          # Memory capacity
+    batch_size=256,              # Training batch size
+    gamma=0.98,                  # Future reward discount
+    exploration_fraction=0.3,    # Exploration duration
     target_update_interval=2000  # Network update frequency
 )
 ```
@@ -257,8 +257,7 @@ We welcome contributions! Here's how you can help:
 
 ```bash
 # Fork the repository
-git clone https://github.com/yourusername/smart-traffic-light-system.git
-
+git clone https://github.com/MoussaBane/Smart-Traffic-Light-Optimisation-System-DRL/tree/final_version
 # Create a feature branch
 git checkout -b feature/amazing-feature
 

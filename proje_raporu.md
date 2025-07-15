@@ -1,12 +1,12 @@
 # 🚦 Akıllı Trafik Işığı Sistemi - Kapsamlı Proje Raporu
 
-## 📋 Proje Özeti
+## Proje Özeti
 
 Bu rapor, Deep Q-Network (DQN) tabanlı akıllı trafik ışığı kontrol sisteminin geliştirilmesi, eğitimi ve test edilmesi süreçlerinin detaylı analizini içermektedir. Sistem, geleneksel sabit zamanlı trafik ışığı sistemlerine kıyasla %800+ verimlilik artışı sağlamıştır.
 
 ---
 
-## 🎯 1. PROJENİN AMACI VE KAPSAMI
+## 1. PROJENİN AMACI VE KAPSAMI
 
 ### 1.1 Proje Amacı
 - **Ana Hedef**: Kavşaklarda trafik akışını optimize etmek
@@ -23,7 +23,7 @@ Bu rapor, Deep Q-Network (DQN) tabanlı akıllı trafik ışığı kontrol siste
 
 ---
 
-## 🔧 2. SİSTEM MİMARİSİ VE TEKNİK DETAYLAR
+## 2. SİSTEM MİMARİSİ VE TEKNİK DETAYLAR
 
 ### 2.1 Genel Sistem Mimarisi
 
@@ -31,30 +31,30 @@ Bu rapor, Deep Q-Network (DQN) tabanlı akıllı trafik ışığı kontrol siste
 ┌─────────────────────────────┐
 │     TRAFİK ORTAMI           │
 │                             │
-│ • Araç Üretimi             │
-│ • Kuyruk Takibi            │
-│ • Bekleme Süresi           │
-│ • Kavşak Yönetimi          │
+│ • Araç Üretimi              │
+│ • Kuyruk Takibi             │
+│ • Bekleme Süresi            │
+│ • Kavşak Yönetimi           │
 └─────────────┬───────────────┘
               │
               ▼
 ┌─────────────────────────────┐
 │      DQN AGENT              │
 │                             │
-│ • Durum Analizi            │
-│ • Aksiyon Seçimi           │
-│ • Ödül Öğrenimi            │
-│ • Politika Güncellemesi    │
+│ • Durum Analizi             │
+│ • Aksiyon Seçimi            │
+│ • Ödül Öğrenimi             │
+│ • Politika Güncellemesi     │
 └─────────────┬───────────────┘
               │
               ▼
 ┌─────────────────────────────┐
-│  TRAFİK IŞIĞI KONTROLÜ     │
+│  TRAFİK IŞIĞI KONTROLÜ      │
 │                             │
-│ • Faz Yönetimi             │
-│ • Zamanlama Kontrolü       │
-│ • Güvenlik Kontrolleri     │
-│ • Performans İzleme        │
+│ • Faz Yönetimi              │
+│ • Zamanlama Kontrolü        │
+│ • Güvenlik Kontrolleri      │
+│ • Performans İzleme         │
 └─────────────────────────────┘
 ```
 
@@ -106,7 +106,7 @@ Bu rapor, Deep Q-Network (DQN) tabanlı akıllı trafik ışığı kontrol siste
 
 ---
 
-## 🧠 3. DEEP Q-NETWORK (DQN) MİMARİSİ
+## 3. DEEP Q-NETWORK (DQN) MİMARİSİ
 
 ### 3.1 Ağ Yapısı
 ```
@@ -165,7 +165,7 @@ Agent 4 farklı aksiyon seçebilir:
 
 ---
 
-## 💰 4. ÖDÜL FONKSİYONU ANALİZİ
+## 4. ÖDÜL FONKSİYONU ANALİZİ
 
 ### 4.1 Çok Amaçlı Ödül Sistemi
 
@@ -177,19 +177,19 @@ total_reward = throughput_reward - queue_penalty - wait_penalty - phase_change_c
 
 #### **4.2.1 Pozitif Ödüller**
 
-**🟢 Throughput Reward (Geçiş Ödülü)**
+**Throughput Reward (Geçiş Ödülü)**
 - **Hesaplama**: `vehicles_passed * 10`
 - **Amaç**: Araç geçişini maksimize etmek
 - **Ağırlık**: Ana motivasyon kaynağı
 - **Test Sonucu**: 41.45 ± 9.66 (20-60 aralığı)
 
-**🔵 Efficiency Bonus (Verimlilik Bonusu)**
+**Efficiency Bonus (Verimlilik Bonusu)**
 - **Hesaplama**: `min(2.0, vehicles_passed / optimal_rate)`
 - **Amaç**: Optimal verimlilik teşvik etmek
 - **Koşul**: Yüksek araç geçiş oranlarında aktif
 - **Test Sonucu**: 1.84 ± 0.54 (0-2 aralığı)
 
-**🟡 Balance Bonus (Denge Bonusu)**
+**Balance Bonus (Denge Bonusu)**
 - **Hesaplama**: Yönler arası adil dağılım ödülü
 - **Amaç**: Tüm yönlere eşit hizmet
 - **Koşul**: Kuyruk dengesizliği olmadığında
@@ -197,19 +197,19 @@ total_reward = throughput_reward - queue_penalty - wait_penalty - phase_change_c
 
 #### **4.2.2 Negatif Cezalar**
 
-**🔴 Queue Penalty (Kuyruk Cezası)**
+**Queue Penalty (Kuyruk Cezası)**
 - **Hesaplama**: `-0.1 * queue_length`
 - **Amaç**: Uzun kuyrukları önlemek
 - **Etki**: Kuyruk uzunluğu ile doğru orantılı
 - **Test Sonucu**: -0.66 ± 0.96 (-5.1 to 0 aralığı)
 
-**🟠 Wait Penalty (Bekleme Cezası)**
+**Wait Penalty (Bekleme Cezası)**
 - **Hesaplama**: `-0.05 * max_wait_time`
 - **Amaç**: Uzun bekleme sürelerini minimize etmek
 - **Etki**: En uzun bekleyen araca göre
 - **Test Sonucu**: -0.23 ± 0.19 (-1.85 to -0.1 aralığı)
 
-**🟣 Phase Change Cost (Faz Değişim Maliyeti)**
+**Phase Change Cost (Faz Değişim Maliyeti)**
 - **Hesaplama**: `-0.5` (faz değişiminde)
 - **Amaç**: Gereksiz faz değişimlerini önlemek
 - **Etki**: Stabiliteyi teşvik etmek
@@ -227,7 +227,7 @@ Agent, pozitif ödülleri maksimize ederken cezaları minimize etmeyi öğrenmi�
 
 ---
 
-## 🎓 5. EĞİTİM SÜRECİ DETAYLI ANALİZİ
+## 5. EĞİTİM SÜRECİ DETAYLI ANALİZİ
 
 ### 5.1 Eğitim Konfigürasyonu
 
@@ -307,17 +307,17 @@ Timestep Range    | Mean Reward | Improvement
 
 #### **6.2.1 Birincil Metrikler**
 
-**📊 Total Reward (Toplam Ödül)**
+**Total Reward (Toplam Ödül)**
 - **Ölçüm**: Episode başına toplam ödül puanı
 - **Hesaplama**: Tüm adımlardaki ödüllerin toplamı
 - **İstatistik**: Ortalama, standart sapma, min/max
 
-**🚗 Vehicle Throughput (Araç Geçiş Kapasitesi)**
+**Vehicle Throughput (Araç Geçiş Kapasitesi)**
 - **Ölçüm**: Episode/adım başına geçen araç sayısı
 - **Hesaplama**: Toplam geçen araç / toplam adım
 - **Performans**: Saatlik araç kapasitesi tahmini
 
-**⏱️ Wait Time Analysis (Bekleme Süresi Analizi)**
+**Wait Time Analysis (Bekleme Süresi Analizi)**
 - **Ölçüm**: Maksimum ve ortalama bekleme süreleri
 - **Hesaplama**: Araç başına bekleme süresi izleme
 - **Kritik**: Kullanıcı memnuniyeti göstergesi
@@ -329,7 +329,7 @@ Timestep Range    | Mean Reward | Improvement
 - **Analiz**: Optimal zamanlama değerlendirmesi
 - **Denge**: Reaktiflik vs stabilite
 
-**🚧 Queue Control (Kuyruk Kontrolü)**
+**Queue Control (Kuyruk Kontrolü)**
 - **Ölçüm**: Ortalama ve maksimum kuyruk uzunlukları
 - **Analiz**: Kuyruk oluşum ve dağılım süreçleri
 - **Stabilite**: Kuyruk uzunluğu varyansı
@@ -338,20 +338,20 @@ Timestep Range    | Mean Reward | Improvement
 
 #### **6.3.1 Performans İstatistikleri**
 
-**🏆 Genel Başarı Oranları:**
+**Genel Başarı Oranları:**
 - **Mükemmel Episodlar**: %20 (2/10) - Ortalamanın üzerinde
 - **İyi Episodlar**: %20 (2/10) - Ortalama civarında
 - **Normal Episodlar**: %50 (5/10) - Kabul edilebilir aralık
 - **Düşük Performans**: %10 (1/10) - Minimal risk
 
-**📈 Performans Tutarlılığı:**
+**Performans Tutarlılığı:**
 - **Toplam Ödül CV**: 1.33% (Çok düşük varyasyon)
 - **Throughput CV**: 1.41% (Yüksek tutarlılık)
 - **Efficiency CV**: 1.41% (Stabil performans)
 
 ---
 
-## 📊 7. DETAYLLI SONUÇ ANALİZİ
+## 7. DETAYLLI SONUÇ ANALİZİ
 
 ### 7.1 Başlıca Performans Göstergeleri
 
@@ -458,41 +458,41 @@ Kontrol Başarısı:        %94.3
 
 #### **7.4.1 Pozitif Ödül Bileşenleri**
 
-**🟢 Throughput Reward: 41.45 ± 9.66**
+**Throughput Reward: 41.45 ± 9.66**
 - **Rol**: Ana motivasyon kaynağı (%94.8 toplam pozitif ödül)
 - **Varyans**: Adaptif trafik koşullarına uyum
 - **Başarı**: Araç geçişini etkili şekilde teşvik ediyor
 
-**🔵 Efficiency Bonus: 1.84 ± 0.54**
+**Efficiency Bonus: 1.84 ± 0.54**
 - **Rol**: Optimal trafik yönetimi ödülü (%4.2 katkı)
 - **Tutarlılık**: Sürekli pozitif değerler
 - **Etki**: Verimlilik optimizasyonunu destekliyor
 
-**🟡 Balance Bonus: 0.24 ± 0.22**
+**Balance Bonus: 0.24 ± 0.22**
 - **Rol**: Adil trafik dağılımı (%0.5 katkı)
 - **Amaç**: Tüm yönlere eşit hizmet
 - **Sonuç**: Yanlılık önlenmesi başarılı
 
 #### **7.4.2 Negatif Ceza Bileşenleri**
 
-**🔴 Queue Length Penalty: -0.66 ± 0.96**
+**Queue Length Penalty: -0.66 ± 0.96**
 - **Etki**: Aşırı kuyruk oluşumunu caydırır
 - **Büyüklük**: Küçük magnitude, etkili kuyruk kontrolü göstergesi
 - **Sonuç**: Başarılı kuyruk yönetimi
 
-**🟠 Wait Time Penalty: -0.23 ± 0.19**
+**Wait Time Penalty: -0.23 ± 0.19**
 - **Amaç**: Araç bekleme sürelerini minimize et
 - **Düşük ceza**: Mükemmel bekleme yönetimi
 - **Başarı**: Wait time optimizasyonu çalışıyor
 
-**🟣 Phase Change Cost: -0.25 ± 0.25**
+**Phase Change Cost: -0.25 ± 0.25**
 - **Hedef**: Gereksiz faz değişimlerini önle
 - **Denge**: Optimal zamanlama teşviki
 - **Sonuç**: Stabil ama responsive kontrol
 
 ---
 
-## 🎯 8. SİSTEM İNTELLİGENCE ANALİZİ
+## 8. SİSTEM İNTELLİGENCE ANALİZİ
 
 ### 8.1 Öğrenilmiş Stratejiler
 
@@ -556,40 +556,40 @@ Action = SELECT highest_priority_direction
 
 ---
 
-## 🔮 9. GERÇEK DÜNYA UYGULAMASI DEĞERLENDİRMESİ
+## 9. GERÇEK DÜNYA UYGULAMASI DEĞERLENDİRMESİ
 
 ### 9.1 Deployment Hazırlık Durumu
 
 #### **9.1.1 Prodüksiyon Hazırlığı Göstergeleri**
 
-**✅ Tutarlı Yüksek Performans**
+**Tutarlı Yüksek Performans**
 - **%90 episod başarısı**: Ortalamanın üzerinde performans
 - **Düşük varyans**: Öngörülebilir sistem davranışı
 - **Robus error handling**: Minimal performans düşüşü
 
-**✅ Ölçeklenebilir Verimlilik**
+**Ölçeklenebilir Verimlilik**
 - **%828.90 verimlilik**: Baseline'ın 8.3 katı
 - **Trafik varyasyonu toleransı**: Farklı koşullarda stabil
 - **Adaptasyon kabiliyeti**: Değişen kalıplara uyum
 
-**✅ Öngörülebilir Davranış**
+**Öngörülebilir Davranış**
 - **Düşük metrik varyansı**: Güvenilir operasyon
 - **Tutarlı karar verme**: Benzer durumlarda benzer kararlar
 - **Stabil politika**: Öğrenilmiş stratejilerin kalıcılığı
 
 #### **9.1.2 Beklenen Gerçek Dünya Etkisi**
 
-**🚗 Trafik Akışı İyileştirmesi**
+**Trafik Akışı İyileştirmesi**
 - **%800+ verimlilik**: Sabit zamanlı sistemlere karşı
 - **%85 bekleme azalması**: Ortalama wait time düşüşü
 - **Kapasitede artış**: ~3x daha fazla araç işleme
 
-**⏱️ Zaman Tasarrufu**
+**Zaman Tasarrufu**
 - **Günlük commute**: Kişi başına 15-20 dakika tasarruf
 - **Şehir çapında**: Milyonlarca saat toplam tasarruf
 - **Ekonomik etki**: Zaman maliyeti azalması
 
-**🌱 Çevresel Fayda**
+**Çevresel Fayda**
 - **Yakıt tüketimi**: %30-40 azalma (az bekleme, smooth flow)
 - **Emisyon azalması**: CO2 ve hava kalitesi iyileştirmesi
 - **Gürültü kirliliği**: Daha az fren-gaz çevrim süresi
@@ -629,7 +629,7 @@ backup_system = Traditional # Geleneksel sisteme geri dönüş
 
 ---
 
-## 📈 10. PERFORMANS BENCHMARKİNG VE KARŞILAŞTIRMA
+## 10. PERFORMANS BENCHMARKİNG VE KARŞILAŞTIRMA
 
 ### 10.1 Geleneksel Sistemlerle Karşılaştırma
 
@@ -684,7 +684,7 @@ backup_system = Traditional # Geleneksel sisteme geri dönüş
 
 ---
 
-## 🔧 11. TEKNİK İYİLEŞTİRME ÖNERİLERİ
+## 11. TEKNİK İYİLEŞTİRME ÖNERİLERİ
 
 ### 11.1 Kısa Vadeli İyileştirmeler
 
@@ -824,7 +824,7 @@ class SmartCityTrafficBrain:
 
 ---
 
-## 📊 12. EKONOMİK ETKİ ANALİZİ
+## 12. EKONOMİK ETKİ ANALİZİ
 
 ### 12.1 Maliyet-Fayda Analizi
 
@@ -893,13 +893,13 @@ CO2 emission reduction: 30-35%
 
 ---
 
-## 🎯 13. SONUÇ VE ÖNERILER
+## 13. SONUÇ VE ÖNERILER
 
 ### 13.1 Proje Başarı Değerlendirmesi
 
 #### **13.1.1 Hedeflere Ulaşım Durumu**
 
-**✅ Ana Hedefler Başarıyla Tamamlandı:**
+**Ana Hedefler Başarıyla Tamamlandı:**
 
 1. **Traffic Optimization**: %729 throughput improvement (**Hedef aşıldı**)
 2. **Wait Time Reduction**: %85 azalma (**Excellent**)
@@ -907,7 +907,7 @@ CO2 emission reduction: 30-35%
 4. **AI Learning Success**: 0.989 correlation metrics (**Perfect**)
 5. **Deployment Readiness**: Production-ready system (**Achieved**)
 
-**📊 Performans Değerlendirmesi:**
+**Performans Değerlendirmesi:**
 - **Technical Achievement**: **A+** (Exceptional)
 - **Innovation Level**: **A+** (Cutting-edge)
 - **Practical Impact**: **A+** (Revolutionary)
@@ -916,13 +916,13 @@ CO2 emission reduction: 30-35%
 
 #### **13.1.2 Breakthrough Achievements**
 
-**🏆 Dünya Çapında Benchmark:**
+**Dünya Çapında Benchmark:**
 - **%800+ efficiency**: Dünya literatüründe nadir
 - **1.62 adım wait time**: Industri standardının çok altında
 - **0.989 correlation**: Mükemmel AI learning göstergesi
 - **%90 consistency**: Production-grade reliability
 
-**🚀 Innovation Highlights:**
+**Innovation Highlights:**
 - **Multi-objective optimization**: Balanced approach
 - **Emergent behavior discovery**: AI sophisticated strategies
 - **Real-world applicability**: Immediate deployment potential
@@ -1020,7 +1020,7 @@ CO2 emission reduction: 30-35%
 
 ---
 
-## 📚 14. KAYNAKLAR VE REFERANSLAR
+## 14. KAYNAKLAR VE REFERANSLAR
 
 ### 14.1 Teknik Referanslar
 
@@ -1063,7 +1063,7 @@ CO2 emission reduction: 30-35%
 
 ---
 
-## 📞 15. İLETİŞİM VE DESTEK
+## 15. İLETİŞİM VE DESTEK
 
 ### 15.1 Proje Ekibi
 

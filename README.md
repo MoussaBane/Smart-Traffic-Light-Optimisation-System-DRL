@@ -299,13 +299,6 @@ torch>=1.12.0
 | **Rush Hour** | 90% | 8,600+ | 840%+ |
 | **Mixed Patterns** | 98% | 8,479+ | 829%+ |
 
-### Awards & Recognition
-
-- **Best AI Traffic Solution** - University Research Competition 2025
-- **Innovation Award** - Smart City Technology Summit
-- **Performance Excellence** - 800%+ efficiency improvement
-- **Deployment Ready** - Production-grade system validation
-
 ## Future Roadmap
 
 ### Planned Features
@@ -340,30 +333,6 @@ torch>=1.12.0
 - **Fork** the project to contribute
 - **Watch** for updates and new releases
 - **Share** with others who might benefit
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2025 Smart Traffic Light System Contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-```
 
 ## Acknowledgments
 

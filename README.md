@@ -106,19 +106,19 @@ python test_agent.py
 smart-traffic-light-system/
 ├── 📄 README.md                          # Project documentation
 ├── 📄 requirements.txt                   # Python dependencies
-├── 📄 LICENSE                           # MIT License
-├── 🔧 train_dqn.py                      # Main training script
-├── 🔧 traffic_env02.py                  # Traffic environment simulation
-├── 🔧 test_agent.py                     # Agent testing utilities
-├── 📊 analyze_results.py                # Performance analysis & visualization
-├── 📈 detailed_test_analysis_report.md  # Comprehensive analysis report
-├── 🤖 dqn_traffic_optimized.zip         # Pre-trained DQN model
-├── 📁 best_model/                       # Best model checkpoints
+├── 📄 LICENSE                            # MIT License
+├── 🔧 train_dqn.py                       # Main training script
+├── 🔧 traffic_env02.py                   # Traffic environment simulation
+├── 🔧 test_agent.py                      # Agent testing utilities
+├── 📊 analyze_results.py                 # Performance analysis & visualization
+├── 📈 detailed_test_analysis_report.md   # Comprehensive analysis report
+├── 🤖 dqn_traffic_optimized.zip          # Pre-trained DQN model
+├── 📁 best_model/                        # Best model checkpoints
 │   └── best_model.zip
-├── 📁 logs/                             # Training logs and metrics
+├── 📁 logs/                              # Training logs and metrics
 │   └── evaluations.npz
-├── 📁 traffic_light_tensorboard/        # TensorBoard logs
-└── 📁 __pycache__/                      # Python cache files
+├── 📁 traffic_light_tensorboard/         # TensorBoard logs
+└── 📁 __pycache__/                       # Python cache files
 ```
 
 ## Technical Details
@@ -333,7 +333,7 @@ torch>=1.12.0
 - **Documentation**: Check this README and the analysis report
 - **Issues**: Submit GitHub issues for bugs and feature requests
 - **Discussions**: Use GitHub Discussions for questions and ideas
-- **Email**: [your.email@example.com] for direct support
+- **Email**: banemoussa2001@gmail.com for direct support
 
 ### Community
 

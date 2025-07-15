@@ -348,7 +348,7 @@ torch>=1.12.0
 
 ### 🚦 Making Traffic Smarter, One Intersection at a Time
 
-**[⭐ Star this repo](https://github.com/yourusername/smart-traffic-light-system)** • **[🍴 Fork](https://github.com/yourusername/smart-traffic-light-system/fork)** • **[📢 Share](https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20AI-powered%20traffic%20light%20system!&url=https://github.com/yourusername/smart-traffic-light-system)**
+**[Star this repo](https://github.com/yourusername/smart-traffic-light-system)** • **[Fork](https://github.com/yourusername/smart-traffic-light-system/fork)** • **[Share](https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20AI-powered%20traffic%20light%20system!&url=https://github.com/yourusername/smart-traffic-light-system)**
 
 Built with ❤️ by Moussa BANE | © 2025 Smart Traffic Light System
 

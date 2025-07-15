@@ -8,20 +8,20 @@
 
 > **An intelligent traffic light control system using Deep Q-Network (DQN) reinforcement learning to optimize traffic flow and reduce wait times.**
 
-## 🎯 Project Overview
+## Project Overview
 
 The Smart Traffic Light System is an AI-powered solution that uses deep reinforcement learning to dynamically control traffic lights at intersections. Unlike traditional fixed-timing systems, our intelligent agent adapts in real-time to traffic conditions, achieving **800%+ efficiency improvements** and reducing average wait times by **85%**.
 
-### 🌟 Key Features
+### Key Features
 
-- **🧠 AI-Powered Control**: DQN-based reinforcement learning agent
-- **⚡ Real-time Adaptation**: Dynamic response to changing traffic patterns
-- **📊 Multi-objective Optimization**: Balances throughput, wait times, and queue management
-- **🔄 Robust Performance**: Consistent operation across varying traffic conditions
-- **📈 Comprehensive Analytics**: Detailed performance monitoring and visualization
-- **🚀 Production Ready**: Thoroughly tested and validated system
+- **AI-Powered Control**: DQN-based reinforcement learning agent
+- **Real-time Adaptation**: Dynamic response to changing traffic patterns
+- **Multi-objective Optimization**: Balances throughput, wait times, and queue management
+- **Robust Performance**: Consistent operation across varying traffic conditions
+- **Comprehensive Analytics**: Detailed performance monitoring and visualization
+- **Production Ready**: Thoroughly tested and validated system
 
-## 📈 Performance Highlights
+## Performance Highlights
 
 | Metric | Traditional System | Smart System | Improvement |
 |--------|-------------------|--------------|-------------|
@@ -30,17 +30,17 @@ The Smart Traffic Light System is an AI-powered solution that uses deep reinforc
 | **Queue Management** | Static response | Dynamic optimization | **Adaptive** |
 | **System Efficiency** | 100% baseline | 828.90% | **+729%** |
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│  Traffic        │    │   DQN Agent      │    │  Traffic Light  │
-│  Environment    │◄──►│  (Neural Net)    │◄──►│  Controller     │
-│                 │    │                  │    │                 │
-│ • Vehicle Spawn │    │ • State Analysis │    │ • Phase Control │
-│ • Queue Tracking│    │ • Action Selection│    │ • Timing Logic  │
-│ • Wait Monitoring│   │ • Reward Learning│    │ • Safety Checks │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
+┌──────────────────┐    ┌───────────────────┐    ┌─────────────────┐
+│  Traffic         │    │   DQN Agent       │    │  Traffic Light  │
+│  Environment     │◄──►│  (Neural Net)     │◄──►│  Controller     │
+│                  │    │                   │    │                 │
+│ • Vehicle Spawn  │    │ • State Analysis  │    │ • Phase Control │
+│ • Queue Tracking │    │ • Action Selection│    │ • Timing Logic  │
+│ • Wait Monitoring│    │ • Reward Learning │    │ • Safety Checks │
+└──────────────────┘    └───────────────────┘    └─────────────────┘
          │                        │                        │
          └────────────────────────┼────────────────────────┘
                                   │
@@ -52,7 +52,7 @@ The Smart Traffic Light System is an AI-powered solution that uses deep reinforc
                     └─────────────────────────┘
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -79,13 +79,13 @@ The Smart Traffic Light System is an AI-powered solution that uses deep reinforc
 
 ### Running the System
 
-#### 🎯 **Option 1: Use Pre-trained Model (Recommended)**
+#### **Option 1: Use Pre-trained Model (Recommended)**
 ```bash
 # Run analysis with the trained model
 python analyze_results.py
 ```
 
-#### 🏋️ **Option 2: Train Your Own Model**
+#### **Option 2: Train Your Own Model**
 ```bash
 # Train a new DQN agent (takes ~8 minutes)
 python train_dqn.py
@@ -94,7 +94,7 @@ python train_dqn.py
 python analyze_results.py
 ```
 
-#### 📊 **Option 3: Test the Agent**
+#### **Option 3: Test the Agent**
 ```bash
 # Test the trained agent
 python test_agent.py
@@ -121,7 +121,7 @@ smart-traffic-light-system/
 └── 📁 __pycache__/                      # Python cache files
 ```
 
-## 🧠 Technical Details
+## Technical Details
 
 ### Deep Q-Network (DQN) Configuration
 
@@ -158,7 +158,7 @@ Multi-objective reward balancing:
 reward = throughput_reward - queue_penalty - wait_penalty - phase_change_cost + efficiency_bonus + balance_bonus
 ```
 
-## 📊 Performance Analysis
+## Performance Analysis
 
 ### Training Results
 
@@ -169,22 +169,22 @@ reward = throughput_reward - queue_penalty - wait_penalty - phase_change_cost + 
 
 ### Real-world Performance Metrics
 
-#### 🚗 **Traffic Throughput**
+#### **Traffic Throughput**
 - Average: **8.29 vehicles/step**
 - Peak: **12 vehicles/step**
 - Consistency: ±23.4 vehicles per episode
 
-#### ⏱️ **Wait Time Optimization**
+#### **Wait Time Optimization**
 - Average wait: **1.62 steps**
 - Maximum wait: **7 steps**
 - 85% reduction vs. traditional systems
 
-#### 🔄 **Adaptive Control**
+#### **Adaptive Control**
 - Phase change rate: **53.3%** (optimal responsiveness)
 - Queue management: Average **13.87 vehicles**
 - System stability: **99%** successful episodes
 
-## 🔬 Research & Validation
+## Research & Validation
 
 ### Methodology
 
@@ -200,7 +200,7 @@ reward = throughput_reward - queue_penalty - wait_penalty - phase_change_cost + 
 - **Scalability**: Maintains performance across varying traffic densities
 - **Robustness**: Handles traffic spikes without performance degradation
 
-## 🛠️ Development & Customization
+## Development & Customization
 
 ### Extending the System
 
@@ -224,7 +224,7 @@ model = DQN(
 )
 ```
 
-## 📈 Monitoring & Analytics
+## Monitoring & Analytics
 
 ### TensorBoard Integration
 
@@ -243,15 +243,15 @@ The system tracks comprehensive metrics:
 - Phase change patterns
 - Efficiency correlations
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
-1. **🐛 Bug Reports**: Submit issues with detailed descriptions
-2. **💡 Feature Requests**: Propose new functionality
-3. **🔧 Code Contributions**: Submit pull requests with improvements
-4. **📚 Documentation**: Help improve documentation and examples
-5. **🧪 Testing**: Add test cases and validation scenarios
+1. **Bug Reports**: Submit issues with detailed descriptions
+2. **Feature Requests**: Propose new functionality
+3. **Code Contributions**: Submit pull requests with improvements
+4. **Documentation**: Help improve documentation and examples
+5. **Testing**: Add test cases and validation scenarios
 
 ### Development Setup
 
@@ -269,7 +269,7 @@ git commit -m "Add amazing feature"
 git push origin feature/amazing-feature
 ```
 
-## 📋 Requirements
+## Requirements
 
 ### Core Dependencies
 
@@ -289,7 +289,7 @@ torch>=1.12.0
 - **Python**: 3.8+ (3.9+ recommended)
 - **OS**: Windows 10+, macOS 10.14+, Ubuntu 18.04+
 
-## 🏆 Results & Achievements
+## Results & Achievements
 
 ### Performance Benchmarks
 
@@ -302,12 +302,12 @@ torch>=1.12.0
 
 ### Awards & Recognition
 
-- 🥇 **Best AI Traffic Solution** - University Research Competition 2025
-- 🏆 **Innovation Award** - Smart City Technology Summit
-- 📊 **Performance Excellence** - 800%+ efficiency improvement
-- 🎯 **Deployment Ready** - Production-grade system validation
+- **Best AI Traffic Solution** - University Research Competition 2025
+- **Innovation Award** - Smart City Technology Summit
+- **Performance Excellence** - 800%+ efficiency improvement
+- **Deployment Ready** - Production-grade system validation
 
-## 🔮 Future Roadmap
+## Future Roadmap
 
 ### Planned Features
 
@@ -326,21 +326,21 @@ torch>=1.12.0
 - **Federated Learning**: Collaborative learning across multiple intersections
 - **Computer Vision**: Integration with traffic cameras for real-time vehicle detection
 
-## 📞 Support & Contact
+## Support & Contact
 
 ### Getting Help
 
-- **📖 Documentation**: Check this README and the analysis report
-- **🐛 Issues**: Submit GitHub issues for bugs and feature requests
-- **💬 Discussions**: Use GitHub Discussions for questions and ideas
-- **📧 Email**: [your.email@example.com] for direct support
+- **Documentation**: Check this README and the analysis report
+- **Issues**: Submit GitHub issues for bugs and feature requests
+- **Discussions**: Use GitHub Discussions for questions and ideas
+- **Email**: [your.email@example.com] for direct support
 
 ### Community
 
-- **🌟 Star** this repository if you find it useful
-- **🍴 Fork** the project to contribute
-- **👁️ Watch** for updates and new releases
-- **📢 Share** with others who might benefit
+- **Star** this repository if you find it useful
+- **Fork** the project to contribute
+- **Watch** for updates and new releases
+- **Share** with others who might benefit
 
 ## 📄 License
 
@@ -366,7 +366,7 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ```
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Stable-Baselines3** team for the excellent RL library
 - **OpenAI Gymnasium** for the environment framework

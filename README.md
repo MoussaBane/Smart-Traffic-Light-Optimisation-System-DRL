@@ -45,10 +45,10 @@ The Smart Traffic Light System is an AI-powered solution that uses deep reinforc
          └────────────────────────┼────────────────────────┘
                                   │
                     ┌─────────────────────────┐
-                    │   Performance Monitor  │
-                    │ • Real-time Analytics  │
-                    │ • Visualization        │
-                    │ • Logging & Reports    │
+                    │   Performance Monitor   │
+                    │ • Real-time Analytics   │
+                    │ • Visualization         │
+                    │ • Logging & Reports     │
                     └─────────────────────────┘
 ```
 
@@ -382,6 +382,6 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 **[⭐ Star this repo](https://github.com/yourusername/smart-traffic-light-system)** • **[🍴 Fork](https://github.com/yourusername/smart-traffic-light-system/fork)** • **[📢 Share](https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20AI-powered%20traffic%20light%20system!&url=https://github.com/yourusername/smart-traffic-light-system)**
 
-Built with ❤️ by [Your Name] | © 2025 Smart Traffic Light System
+Built with ❤️ by Moussa BANE | © 2025 Smart Traffic Light System
 
 </div>

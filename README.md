@@ -63,7 +63,7 @@ The Smart Traffic Light System is an AI-powered solution that uses deep reinforc
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/smart-traffic-light-system.git
+   git clone https://github.com/MoussaBane/Smart-Traffic-Light-Optimisation-System-DRL/tree/final_version
    cd smart-traffic-light-system
    ```
 

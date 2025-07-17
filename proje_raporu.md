@@ -1068,12 +1068,12 @@ CO2 emission reduction: 30-35%
 ### 15.1 Proje Ekibi
 
 **Lead Developer & AI Researcher**
-- Email: [your.email@example.com]
-- GitHub: [github.com/yourusername]
-- LinkedIn: [linkedin.com/in/yourprofile]
+- Email: banemoussa2001@gmail.com
+- GitHub: https://github.com/MoussaBane
+- LinkedIn: https://www.linkedin.com/in/moussa-bane-19b5a91ba/
 
 **Project Repository**
-- **GitHub**: https://github.com/yourusername/smart-traffic-light-system
+- **GitHub**: https://github.com/MoussaBane/Smart-Traffic-Light-Optimisation-System-DRL
 - **Documentation**: Comprehensive README and technical docs
 - **Issues**: Bug reports and feature requests welcome
 

@@ -127,15 +127,15 @@ models/
 checkpoints/
 
 # TensorBoard logs
-logs/
+# logs/
 runs/
-**/tensorboard/
-**/traffic_light_tensorboard/
+# **/tensorboard/
+# **/traffic_light_tensorboard/
 
 # Large files (models)
 *.zip
-best_model/
-dqn_traffic_optimized.zip
+# best_model/
+# dqn_traffic_optimized.zip
 
 # IDE
 .vscode/
@@ -160,6 +160,7 @@ Thumbs.db
 # Backup files
 *.bak
 proje_raporu.txt
+MoussaBane-24435004029 YL BM DRL Bütünleme Proje Raporu.pdf
 
 # Version 0.1
 MoussaBane-24435004029 YL BM DRL Vize Proje Raporu.pdf 

@@ -26,11 +26,11 @@ eval_callback = EvalCallback(
 model = DQN(
     "MlpPolicy",
     env,
-    learning_rate=0.0005,  # Slightly higher
+    learning_rate=0.0005,   # Slightly higher
     buffer_size=100000,     # Larger buffer
     learning_starts=10000,  # More initial exploration
     batch_size=256,         # Larger batches
-    gamma=0.98,            # Slightly longer horizon
+    gamma=0.98,             # Slightly longer horizon
     train_freq=4,
     target_update_interval=2000,
     exploration_fraction=0.3,
